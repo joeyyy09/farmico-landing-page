@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Furnico</title>
+    </head>
+    <body>
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Furnico</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#products" class="nav__link">Products</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Crafting <br><span class="home__title-color"> excellence</span> <br> in  furniture.</h1>
+                     <div class="home__img">
+                    <img src="https://o.remove.bg/downloads/b4e08ff1-6889-4519-b677-f2f0872b873e/comfortable-modern-chair_176382-910-removebg-preview.png" alt="" srcset="">
+                </div>
+
+                    <a href="#" class="button">About Farmico!</a>
+                </div>
+
+                <div class="home__social"></div>
+
+               
+            </section>
+
+            <section class="about section " id="about">
+                <h2 class="section-title">About Us</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="assets/img/prefil1.jpg" alt="">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle"> Welcome to Farmico!</h2>
+                        <p class="about__text"> Your destination for exceptional furniture pieces that redefine elegance and comfort. At Farmico, we specialize in producing high-quality furniture that seamlessly blends timeless aesthetics with modern functionality. <br><br> Our commitment to craftsmanship is unwavering, as each piece is meticulously designed and constructed to reflect both our passion for artistry and our dedication to creating furniture that stands the test of time. Whether you're seeking the perfect statement piece for your living space or a tasteful addition to your office environment, Farmico offers a curated collection that embodies sophistication and durability. <br><br> Experience the fusion of art and utility with Farmico, where every piece tells a story of unparalleled craftsmanship. </p>                                              
+
+                    </div>     
+                                                  
+                </div>
+            </section>
+            
+           
+            
+            <div class="container" id="products">
+                  <section class="work section" id="work">
+                 <h2 class="section-title" id="blog">Our Products!</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card_img">
+                    <img src="assets/img/block.webp" alt="">
+                </div>
+                <div class="card_body">
+                    <h2 class="card_title">Blockchain and Machine Learning</h2>
+                    <p>A helpful tutorial I wrote recently on usage of Machine learning in Blockchain technology. </p>
+
+                    <a href="blog.html" class="read_more">Read article</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_img">
+                    <img src="assets/img/drug.webp" alt="">
+                </div>
+                <div class="card_body">
+                    <h2 class="card_title">Drug Development Using AI</h2>
+                    <p>A helpful tutorial I wrote recently on Drug Discovery and Development Using Artificial Intelligence. </p>
+
+                    <a href="https://medium.com/@gokusenset1/drug-discovery-and-development-using-artificial-intelligence-58e14dbbd729?source=friends_link&sk=af1960c6ecebb0737554e0b12ed9a9e9" class="read_more">Read article</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_img">
+                    <img src="assets/img/data2.webp" alt="">
+                </div>
+                <div class="card_body">
+                    <h2 class="card_title">DataOps for Data Analysts</h2>
+                    <p>A helpful tutorial I wrote recently on DataOps usage in Data Analytics Field.</p>
+                    
+                    <a href="https://medium.com/@gokusenset1/dataops-for-data-analysts-79c659d91065?source=friends_link&sk=b077e5ae7fb623d926228aa21d49917d" class="read_more">Read article</a>
+                </div>
+            </div>
+        </div>
+   
+            </div>
+<section class="contact section" id="contact">
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact__container bd-grid">
+        <?php
+        $thankYouMessage = '';
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") 
+        {
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $message = $_POST['message'];
+            // Perform validation here if needed
+            // Process the form data (you can store it in a database, send an email, etc.)
+            // For this example, let's just display a thank you message.
+            $thankYouMessage = "Thank you, $name, for your message!";
+        }
+        ?>
+
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="contact__form">
+            <input type="text" placeholder="Name" class="contact__input" name="name" required>
+            <input type="email" placeholder="Email" class="contact__input" name="email" required>
+            <textarea placeholder="Enter your message" name="message" cols="30" rows="10" class="contact__input" required></textarea>
+            <input type="submit" value="Submit" class="contact__button button">
+        </form>
+
+        <?php echo $thankYouMessage; ?>
+    </div>
+</section>
+
+        </main>
+        <footer class="footer">
+            <p class="footer__title">Farmico</p>
+            <div class="footer__social">
+                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <p class="footer__copy">&#169; Farmico. All rights reserved.</p>
+        </footer>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
