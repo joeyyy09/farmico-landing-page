@@ -123,25 +123,30 @@
 <section class="contact section" id="contact">
     <h2 class="section-title">Contact</h2>
 
-    <div class="contact__container bd-grid">
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") 
-        {
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $message = $_POST['message'];
-            header("Location: thank_you_page.php");
-            exit(); 
-        }
-        ?>
+    <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    
+    // Process the form data (you can save it to a database, send emails, etc.)
 
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="contact__form">
-            <input type="text" placeholder="Name" class="contact__input" name="name" required>
-            <input type="email" placeholder="Email" class="contact__input" name="email" required>
-            <textarea placeholder="Enter your message" name="message" cols="30" rows="10" class="contact__input" required></textarea>
-            <input type="submit" value="Submit" class="contact__button button">
-        </form>
-    </div>
+    // Redirect to the thank you page
+    header("Location: thank_you_page.php");
+    exit(); 
+}
+?>
+
+<div class="contact__container bd-grid">
+    <form method="POST" class="contact__form">
+        <input type="text" placeholder="Name" class="contact__input" name="name" required>
+        <input type="email" placeholder="Email" class="contact__input" name="email" required>
+        <textarea placeholder="Enter your message" name="message" cols="30" rows="10" class="contact__input" required></textarea>
+        <input type="submit" value="Submit" class="contact__button button">
+    </form>
+</div>
+
 </section>
 
 

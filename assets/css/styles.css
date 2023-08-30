@@ -527,6 +527,13 @@ work__container bd-grid{
     text-align: center;
     align-self: center;
   }
+  .home__title{
+    padding-left: 0;
+  }
+
+  .button{
+    margin-left: 0;
+  }
 }
 @media screen and (max-width: 768px) {
     .home__img {
