@@ -36,11 +36,11 @@
                 <div class="home__data">
                     <h1 class="home__title">Crafting <br><span class="home__title-color"> excellence</span> <br> in  furniture.</h1>
                      <div class="home__img">
-                    <img src="https://o.remove.bg/downloads/b4e08ff1-6889-4519-b677-f2f0872b873e/comfortable-modern-chair_176382-910-removebg-preview.png" alt="" srcset="">
+                    <img class="image-home" src="assets/img/home-image.png" alt="" srcset="">
                 </div>
 
-                    <a href="#" class="button">About Farmico!</a>
-                </div>
+                <a href="#about" class="button">About Farmico!</a>
+            </div>
 
                 <div class="home__social"></div>
 
@@ -70,39 +70,53 @@
                   <section class="work section" id="work">
                  <h2 class="section-title" id="blog">Our Products!</h2>
         <div class="grid">
-            <div class="card">
-                <div class="card_img">
-                    <img src="assets/img/block.webp" alt="">
-                </div>
-                <div class="card_body">
-                    <h2 class="card_title">Blockchain and Machine Learning</h2>
-                    <p>A helpful tutorial I wrote recently on usage of Machine learning in Blockchain technology. </p>
-
-                    <a href="blog.html" class="read_more">Read article</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card_img">
-                    <img src="assets/img/drug.webp" alt="">
-                </div>
-                <div class="card_body">
-                    <h2 class="card_title">Drug Development Using AI</h2>
-                    <p>A helpful tutorial I wrote recently on Drug Discovery and Development Using Artificial Intelligence. </p>
-
-                    <a href="https://medium.com/@gokusenset1/drug-discovery-and-development-using-artificial-intelligence-58e14dbbd729?source=friends_link&sk=af1960c6ecebb0737554e0b12ed9a9e9" class="read_more">Read article</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card_img">
-                    <img src="assets/img/data2.webp" alt="">
-                </div>
-                <div class="card_body">
-                    <h2 class="card_title">DataOps for Data Analysts</h2>
-                    <p>A helpful tutorial I wrote recently on DataOps usage in Data Analytics Field.</p>
-                    
-                    <a href="https://medium.com/@gokusenset1/dataops-for-data-analysts-79c659d91065?source=friends_link&sk=b077e5ae7fb623d926228aa21d49917d" class="read_more">Read article</a>
-                </div>
-            </div>
+            	<div class="product-card">
+		<div class="product-tumb">
+			<img src="https://ii3.pepperfry.com/media/catalog/product/c/l/1600x1760/classic-xxxl-leatherette-bean-bag-with-beans-in-black---yellow-colour-classic-xxxl-leatherette-bean--wbadyu.jpg" alt="">
+		</div>
+		<div class="product-details">
+			<span class="product-catagory">Women,bag</span>
+			<h4><a href="">Women leather bag</a></h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+			<div class="product-bottom-details">
+				<div class="product-price"><small>$96.00</small>$230.99</div>
+				<div class="product-links">
+					<a href=""><i class="fa fa-heart"></i></a>
+					<a href=""><i class="fa fa-shopping-cart"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+            <div class="product-card">
+		<div class="product-tumb">
+			<img src="https://ii3.pepperfry.com/media/catalog/product/c/l/1600x1760/classic-xxxl-leatherette-bean-bag-with-beans-in-black---yellow-colour-classic-xxxl-leatherette-bean--wbadyu.jpg" alt="">
+		</div>
+		<div class="product-details">
+			<span class="product-catagory">Women,bag</span>
+			<h4><a href="">Women leather bag</a></h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+			<div class="product-bottom-details">
+				<div class="product-price"><small>$96.00</small>$230.99</div>
+				<div class="product-links">
+					<a href=""><i class="fa fa-heart"></i></a>
+					<a href=""><i class="fa fa-shopping-cart"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+            <div class="product-card">
+		<div class="product-tumb">
+			<img src="https://ii3.pepperfry.com/media/catalog/product/c/l/1600x1760/classic-xxxl-leatherette-bean-bag-with-beans-in-black---yellow-colour-classic-xxxl-leatherette-bean--wbadyu.jpg" alt="">
+		</div>
+		<div class="product-details">
+			<span class="product-catagory">Women,bag</span>
+			<h4><a href="">Women leather bag</a></h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+			<div class="product-bottom-details">
+				<div class="product-price"><small>$96.00</small>$230.99</div>
+			</div>
+		</div>
+	</div>
         </div>
    
             </div>
@@ -111,17 +125,13 @@
 
     <div class="contact__container bd-grid">
         <?php
-        $thankYouMessage = '';
-
         if ($_SERVER["REQUEST_METHOD"] == "POST") 
         {
             $name = $_POST['name'];
             $email = $_POST['email'];
             $message = $_POST['message'];
-            // Perform validation here if needed
-            // Process the form data (you can store it in a database, send an email, etc.)
-            // For this example, let's just display a thank you message.
-            $thankYouMessage = "Thank you, $name, for your message!";
+            header("Location: thank_you_page.php");
+            exit(); 
         }
         ?>
 
@@ -131,10 +141,10 @@
             <textarea placeholder="Enter your message" name="message" cols="30" rows="10" class="contact__input" required></textarea>
             <input type="submit" value="Submit" class="contact__button button">
         </form>
-
-        <?php echo $thankYouMessage; ?>
     </div>
 </section>
+
+
 
         </main>
         <footer class="footer">
